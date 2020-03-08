@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/main.css">
+    <title>Technical Documentation Page</title>
+</head>
+
+<body>
+    <main id="main-doc" class="container-fluid bg-dark">
+
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-4 text-center">
+                <br><br>
+                <img src="img/header.png" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <nav id="navbar" class="sticky-top nav flex-column bg-secondary rounded-lg">
+                    <a class="nav-link text-dark font-weight-bold" href="#Git_y_GitHub">
+                        Que es Git y Github
+                    </a>
+                    <a class="nav-link text-dark font-weight-bold" href="#commit">
+                        Qué es un commit
+                    </a>
+                    <a class="nav-link text-dark font-weight-bold" href="#Utilizar_Git">
+                        Cómo utilizar Git
+                    </a>
+                    <a class="nav-link text-dark font-weight-bold" href="#hacer_commit">
+                        Cada cuánto hacer commit
+                    </a>
+                    <a class="nav-link text-dark font-weight-bold" href="#como_escribir_commit">
+                        Cómo escribir un mensaje de commit
+                    </a>
+                    <a class="nav-link text-dark font-weight-bold" href="#Github">
+                        Github
+                    </a>
+                    <a class="nav-link text-dark font-weight-bold" href="#flujos_trabajo">
+                        Flujos de trabajo
+                    </a>
+                    <a class="nav-link text-dark font-weight-bold" href="#branch">
+                        Qué es un branch
+                    </a>
+                    <a class="nav-link text-dark font-weight-bold" href="#utilizar_ramas">
+                        Como utilizar las Ramas
+                    </a>
+                    <a class="nav-link text-dark font-weight-bold" href="#como_funciona_rama">
+                        Como funcionan las Ramas o Branches
+                    </a>
+                    <a class="nav-link text-dark font-weight-bold" href="#comandos_ramas">
+                        Comandos esenciales para trabajar con Ramas en Git
+                    </a>
+                    <a class="nav-link text-dark font-weight-bold" href="#lista_comandos">
+                        Lista de comandos para Github / Git que deberías conocer
+                    </a>
+                </nav>
+            </div>
+
+            <div id="color-fond" class="col-sm-8 col-md-8 col-lg-8 col-xl-8 bg-dark text-white text-justify">
+
+                <section id="Git_y_GitHub" class="main_section">
+                    <header class="h3"> Que es Git y Github</header>
+                    <p>
+                        Git es un sistema de control de versiones distribuido, diseñado y desarrollado inicialmente por Linus Torvalds en el 2005 cuando BitKeeper, el sistema de control de versiones que utilizaban para el desarrollo de Linux, cambiara su licencia y no permitiera
+                        su uso libre. En este post vamos a explicar qué es Git y cómo se relaciona con Github.
+                    </p>
+                    <p>
+                        Git, y en general un sistema de control de versiones, tiene dos objetivos principales:
+                    </p>
+                    <ol>
+                        <li>Guardar el historial de cambios sobre el código de un proyecto.</li>
+                        <li>Permitir a varias personas contribuir simultáneamente sobre un mismo proyecto.</li>
+                    </ol>
+                    <p>
+                        Para guardar el historial de cambios podríamos crear una nueva carpeta en nuestro computador y copiar todo el proyecto cada vez que quisiéramos hacer un cambio. Eso no es muy diferente a lo que hace Git por debajo cada vez que se hace un commit.
+                    </p>
+                </section>
+
+                <br>
+
+                <section id="commit" class="main_section">
+                    <header class="h3">¿Qué es un commit?</header>
+                    <p>
+                        Un commit es una fotografía (snapshot) de tu proyecto en un momento determinado. Un commit tiene una fecha y hora, un mensaje que describe los cambios que se hicieron desde el último commit, y un autor.
+                    </p>
+                    <p>
+                        Git es una aplicación de consola con varios subcomandos que nos permiten, entre otras cosas, hacer commits, ver los cambios a los que no les hemos hecho commit, listar los commits, y ver la diferencia entre commits.
+                    </p>
+                </section>
+
+                <br>
+
+                <section id="Utilizar_Git" class="main_section">
+                    <header class="h3">¿Cómo utilizar Git?</header>
+                    <p>
+                        El flujo más simple de trabajo con Git es el siguiente:
+                    </p>
+                    <p>
+                        1. Inicializa el repositorio (esto va a crear una carpeta oculta .git dentro del proyecto):
+                        <code>
+                            $ git init
+                        </code>
+                    </p>
+                    <p>
+                        2. Trabaja en el código: crea, modifica y elimina archivos.
+                    </p>
+                    <p>
+                        3. Selecciona los cambios que vas a incluir en el siguiente commit:
+                        <code>
+                            $ git add index.html /s
+                            $ git add style.css
+                        </code>
+                    </p>
+                    <p>
+                        Puedes incluir todos los cambios con el siguiente comando:
+                        <code>
+                            $ git add -A
+                        </code>
+                    </p>
+                    <p>4. Haz commit:
+                        <code>
+                            $ git commit -m "El mensaje del commit"
+                        </code>
+                    </p>
+                    <p>
+                        5. Repite los pasos 2, 3, y 4.
+                    </p>
+                </section>
+
+                <br>
+
+                <section id="hacer_commit" class="main_section">
+                    <header class="h3">¿Cada cuánto hacer commit?</header>
+                    <p>
+                        Puedes hacer commit tan seguido como quieras. No hay una regla de oro. Mi sugerencia es agrupar un número de cambios que puedas describir en una línea y que tengan sentido en el historial del código. Puede ser un único cambio en un archivo, o múltiples
+                        cambios en varios archivos.
+                    </p>
+                </section>
+
+                <br>
+
+                <section id="como_escribir_commit" class="main_section">
+                    <header class="h3">¿Cómo escribir un mensaje de commit?</header>
+                    <p>
+                        La primera línea debe tener 50 caracteres, o menos, y es obligatoria. La pregunta que debería contestar la primera línea es: ¿qué hace este commit? Ejemplos de respuestas: "Cambia el tamaño de la fuente a #666 " o "Crea el modelo User ".
+                    </p>
+                    <p>
+                        Opcionalmente, después de la primera línea, va una línea en blanco y más detalles de los cambios que incluye el commit: efectos secundarios, explicación de por qué se está haciendo el cambio, etc.
+                    </p>
+                </section>
+
+                <br>
+
+                <section id="Github" class="main_section">
+                    <header class="h3">Github</header>
+                    <p>
+                        Los pasos que describimos anteriormente almacenan el historial del código localmente en la carpeta oculta <code>.git</code> dentro de la raiz de tu proyecto (repositorio local). Si pierdes tu computador, pierdes tu código y su
+                        historial.
+                    </p>
+                    <p>
+                        Podrías hacerle backup, o sincronizarlo en Dropbox (o algún servicio similar), pero si quieres que varias personas trabajen sobre el mismo proyecto, eso no va a funcionar.
+                    </p>
+                    <p>
+                        Github nos brinda la posibilidad de crear un repositorio remoto (una réplica de nuestro repositorio local) en el que varios desarrolladores pueden colaborar, con herramientas que facilitan esa colaboración. Github es gratis para proyectos Open Source,
+                        pero si quieres tener repositorios privados, debes pagar una mensualidad (los planes empiezan en 7 dólares al mes).
+                    </p>
+                    <p>
+                        El primer paso para trabajar con Github es registrarte, crear un repositorio y seguir las instrucciones que aparecen en la pantalla. Puedes empezar con un nuevo repositorio, o subir un repositorio local.
+                    </p>
+                    <p>
+                        Recuerda que al hacer commit en tu repositorio local, esos cambios no se ven reflejados automáticamente en el repositorio remoto. Debes hacer git push para subir tus commits locales al repositorio remoto y git pull para traer los commits que otros han
+                        subido a tu repositorio local.
+                    </p>
+                    <p>
+                        Por ejemplo, para actualizar tu repositorio local con los cambios que han hecho otros desarrolladores en el repositorio remoto puedes ejecutar el siguiente comando:
+                    </p>
+                    <code>$ git pull</code>
+                    <br>
+                    <br>
+                    <p>
+                        Por otro lado, para subir los commits locales que aún no existen en el repositorio remoto puedes ejecutar un comando similar al siguiente (los parámetros pueden variar según el repositorio y la rama que quieras subir):
+                    </p>
+                    <code>$ git push origin master</code>
+                </section>
+
+                <br>
+
+                <section id="flujos_trabajo" class="main_section">
+                    <header class="h3">Flujos de trabajo</header>
+                    <p>
+                        Una ventaja/desventaja de Git es que es muy flexible y no hay una única forma de usarlo. En la sección ¿Cómo utilizar Git? describimos el flujo de trabajo más simple, pero no necesariamente el más recomendado. La razón es que Git es muy estricto en el
+                        orden de los commits y ese flujo de trabajo puede crear conflictos si varios están trabajando sobre el mismo proyecto (al hacer push).
+                    </p>
+                    <p>
+                        Para eso existen las ramas (branches).
+                    </p>
+                </section>
+
+                <br>
+
+                <section id="branch" class="main_section">
+                    <header class="h3">¿Qué es un branch?</header>
+                    <p>
+                        Las ramas (branches) en Git son una poderosa herramienta que les permite a los miembros de un equipo trabajar en paralelo sobre un mismo proyecto y hacer experimientos que pueden eventualmente integrarse a la rama principal (master).
+                    </p>
+                </section>
+
+                <br>
+
+                <section id="utilizar_ramas" class="main_section">
+                    <header class="h3">¿Como utilizar las Ramas?</header>
+                    <p>
+                        Para hacer uso de una de las Ramas de tu proyecto, primero estas Ramas deben de haber sido creadas, por ejemplo vamos a crear 1 rama llamada testing que será para que el encargado de hacer pruebas en nuestro proyecto lo use, para crear esta Rama ejecutamos
+                        el siguiente comando en tu consola de comandos Git Bash
+                    </p>
+                    <code>git branch testing</code>
+                    <br>
+                    <br>
+                    <p>
+                        Como mencionamos arriba Git por defecto crea una Rama llamada master al ejecutar el comando
+                        <code>git init</code>, entonces ahora tenemos 2 Ramas, la Rama master y la otra testing entonces ambas Ramas estarían apuntando al primer historial de cambios del proyecto
+                    </p>
+                    <p>
+                        Ya creamos la Rama testing, pero aún no estamos trabajando dentro de la Rama testing, si no en la Rama master, para cambiar a una Rama en este caso a la Rama testing, ejecuta el siguiente comando en tu consola de comandos Git Bash
+                    </p>
+                    <code>git checkout testing</code>
+                    <br>
+                    <br>
+                    <p>
+                        Con esto ya podrás trabajar sobre la Rama testing sin afectar la Rama master que es en donde se encuentra los archivos originales y no se podrán borrar o dañar.
+                    </p>
+                </section>
+
+                <br>
+
+                <section id="como_funciona_rama" class="main_section">
+                    <header class="h3">¿Como funciona las Ramas o Branches?</header>
+                    <p>
+                        En la actualidad las Ramas son usadas con el repositorio Github que es en donde se almacenan los archivos de un determinado proyecto, estos pueden guardarse de manera Pública o Privada, Github almacena un historial de cambios que se lleven a cabo en el
+                        proyecto.
+                    </p>
+                    <p>
+                        Al cambiar de una Rama a otra, esta se selecciona mediante un apuntador llamado HEAD indicando así que estamos dentro de la determinada Rama a la cual cambiamos o accedimos, por ejemplo en el siguiente caso nos encontramos dentro de la Rama testing y
+                        master al mismo tiempo
+                    </p>
+                </section>
+
+                <br>
+
+                <section id="comandos_ramas" class="main_section">
+                    <header class="h3">Comandos esenciales para trabajar con Ramas en Git</header>
+                    <p>
+                        Existen varios comandos para realizar una determinada tarea, entre los más importantes tenemos
+                    </p>
+                    <code>git branch</code>
+                    <br>
+                    <br>
+                    <p>
+                        Con este comando podemos ver en que Rama nos encontramos actualmente.
+                    </p>
+                    <code>git show-branch</code>
+                    <br>
+                    <br>
+                    <p>
+                        Nos muestra un resumen de todas las ramas que hay en un proyecto junto con sus últimas modificaciones o commits.
+                    </p>
+                    <code>git merge testing -m “Mensaje o Descripción”</code>
+                    <br>
+                    <br>
+                    <p>
+                        Con este comando puedes fusionar 2 ramas, por ejemplo la Rama ‘master’ y ‘testing’, este comando lo debes de ejecutar dentro de la Rama que quieres fusionar, por ejemplo nos pasamos a la Rama master y recién ejecutamos el comando.
+                    </p>
+                </section>
+
+                <br>
+
+                <section id="lista_comandos" class="main_section">
+                    <header class="h3">Lista de comandos para Github / Git que deberías conocer</header>
+                    <ul>
+                        <li>Muestra la guía de Ayuda de Git:
+                            <code>
+                                git help -g
+                            </code>
+                        </li>
+                        <li>Establecer un email:
+                            <code>
+                                git config --global user.email sam@google.com
+                            </code>
+                        </li>
+                        <li>Crear un nuevo repertorio GIT:
+                            <code>
+                                git init
+                            </code>
+                        </li>
+                        <li>Agregar archivos al index:
+                            <code>
+                                git add
+                            </code>
+                        </li>
+                        <li>Revisar repertorios o crear una copia local:
+                            <br>
+                            <code>
+                                git clone alex@93.188.160.58:/path/to/repository
+                            </code>
+                            <br>
+                            <code>
+                                git clone /path/to/repository
+                            </code>
+                        </li>
+                        <li>Cambiar a la cabecera:
+                            <code>
+                                git commit –m “Message to go with the commit here”
+                            </code>
+                        </li>
+                        <li>Lista de los archivos que se han cambiado:
+                            <code>
+                                git status
+                            </code>
+                        </li>
+                        <li>Envía los cambios que se han hecho en la rama principal:
+                            <code>
+                                git push  origin master
+                            </code>
+                        </li>
+                        <li>Crear ramas o cambiar entre ellas:
+                            <code>
+                                command git checkout -b <'banch-name'>
+                            </code>
+                        </li>
+                        <li>Para cambiar de una rama a otra solo usa:
+                            <code>
+                                git checkout <'branch-name'>
+                            </code>
+                        </li>
+                        <li>Conectar a un repositorio remoto:
+                            <code>
+                                git remote -v
+                            </code>
+                        </li>
+                        <li>Listar, crear o borrar ramas:
+                            <code>
+                                git branch
+                            </code>
+                        </li>
+                        <li>Para borrar la rama:
+                            <code>
+                                git branch -d <'branch-name'>
+                            </code>
+                        </li>
+                        <li>Fusionar todos los cambios:
+                            <code>
+                                git pull
+                            </code>
+                        </li>
+                        <li>Fusionar una rama con otra rama:
+                            <code>
+                                git merge <'branch-name'>
+                            </code>
+                        </li>
+                        <li>Ver conflictos con el archivo base:
+                            <code>
+                                git diff --base <'file-name'>
+                            </code>
+                        </li>
+                        <li>Muestra una lista de commits:
+                            <code>
+                                git log
+                            </code>
+                        </li>
+                    </ul>
+                </section>
+
+                <br>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
